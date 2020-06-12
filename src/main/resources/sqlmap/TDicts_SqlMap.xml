@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhihuisystem.pds.mapper.DictsMapper">
+  <resultMap id="BaseResultMap" type="com.zhihuisystem.pds.model.Dicts">
+    <!--
+    @mbg.generated
+    -->
+    <id column="dict_id" jdbcType="INTEGER" property="dictId" />
+    <result column="dict_no" jdbcType="INTEGER" property="dictNo" />
+    <result column="dict_no_name" jdbcType="VARCHAR" property="dictNoName" />
+    <result column="dict_key" jdbcType="VARCHAR" property="dictKey" />
+    <result column="dict_key_name" jdbcType="VARCHAR" property="dictKeyName" />
+    <result column="dict_created_date" jdbcType="TIMESTAMP" property="dictCreatedDate" />
+    <result column="dict_updated_date" jdbcType="TIMESTAMP" property="dictUpdatedDate" />
+    <result column="dict_sort" jdbcType="INTEGER" property="dictSort" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.zhihuisystem.pds.model.Dicts">
+    <!--
+    @mbg.generated
+    -->
+    <result column="dict_remark" jdbcType="LONGVARCHAR" property="dictRemark" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+    @mbg.generated
+    -->
+    dict_id, dict_no, dict_no_name, dict_key, dict_key_name, dict_created_date, dict_updated_date, 
+    dict_sort
+  </sql>
+  <sql id="Blob_Column_List">
+    <!--
+    @mbg.generated
+    -->
+    dict_remark
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+    <!--
+    @mbg.generated
+    -->
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from t_dicts
+    where dict_id = #{dictId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--
+    @mbg.generated
+    -->
+    delete from t_dicts
+    where dict_id = #{dictId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.zhihuisystem.pds.model.Dicts">
+    <!--
+    @mbg.generated
+    -->
+    insert into t_dicts (dict_id, dict_no, dict_no_name, 
+      dict_key, dict_key_name, dict_created_date, 
+      dict_updated_date, dict_sort, dict_remark
+      )
+    values (#{dictId,jdbcType=INTEGER}, #{dictNo,jdbcType=INTEGER}, #{dictNoName,jdbcType=VARCHAR}, 
+      #{dictKey,jdbcType=VARCHAR}, #{dictKeyName,jdbcType=VARCHAR}, #{dictCreatedDate,jdbcType=TIMESTAMP}, 
+      #{dictUpdatedDate,jdbcType=TIMESTAMP}, #{dictSort,jdbcType=INTEGER}, #{dictRemark,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.zhihuisystem.pds.model.Dicts">
+    <!--
+    @mbg.generated
+    -->
+    insert into t_dicts
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="dictId != null">
+        dict_id,
+      </if>
+      <if test="dictNo != null">
+        dict_no,
+      </if>
+      <if test="dictNoName != null">
+        dict_no_name,
+      </if>
+      <if test="dictKey != null">
+        dict_key,
+      </if>
+      <if test="dictKeyName != null">
+        dict_key_name,
+      </if>
+      <if test="dictCreatedDate != null">
+        dict_created_date,
+      </if>
+      <if test="dictUpdatedDate != null">
+        dict_updated_date,
+      </if>
+      <if test="dictSort != null">
+        dict_sort,
+      </if>
+      <if test="dictRemark != null">
+        dict_remark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="dictId != null">
+        #{dictId,jdbcType=INTEGER},
+      </if>
+      <if test="dictNo != null">
+        #{dictNo,jdbcType=INTEGER},
+      </if>
+      <if test="dictNoName != null">
+        #{dictNoName,jdbcType=VARCHAR},
+      </if>
+      <if test="dictKey != null">
+        #{dictKey,jdbcType=VARCHAR},
+      </if>
+      <if test="dictKeyName != null">
+        #{dictKeyName,jdbcType=VARCHAR},
+      </if>
+      <if test="dictCreatedDate != null">
+        #{dictCreatedDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="dictUpdatedDate != null">
+        #{dictUpdatedDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="dictSort != null">
+        #{dictSort,jdbcType=INTEGER},
+      </if>
+      <if test="dictRemark != null">
+        #{dictRemark,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhihuisystem.pds.model.Dicts">
+    <!--
+    @mbg.generated
+    -->
+    update t_dicts
+    <set>
+      <if test="dictNo != null">
+        dict_no = #{dictNo,jdbcType=INTEGER},
+      </if>
+      <if test="dictNoName != null">
+        dict_no_name = #{dictNoName,jdbcType=VARCHAR},
+      </if>
+      <if test="dictKey != null">
+        dict_key = #{dictKey,jdbcType=VARCHAR},
+      </if>
+      <if test="dictKeyName != null">
+        dict_key_name = #{dictKeyName,jdbcType=VARCHAR},
+      </if>
+      <if test="dictCreatedDate != null">
+        dict_created_date = #{dictCreatedDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="dictUpdatedDate != null">
+        dict_updated_date = #{dictUpdatedDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="dictSort != null">
+        dict_sort = #{dictSort,jdbcType=INTEGER},
+      </if>
+      <if test="dictRemark != null">
+        dict_remark = #{dictRemark,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where dict_id = #{dictId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.zhihuisystem.pds.model.Dicts">
+    <!--
+    @mbg.generated
+    -->
+    update t_dicts
+    set dict_no = #{dictNo,jdbcType=INTEGER},
+      dict_no_name = #{dictNoName,jdbcType=VARCHAR},
+      dict_key = #{dictKey,jdbcType=VARCHAR},
+      dict_key_name = #{dictKeyName,jdbcType=VARCHAR},
+      dict_created_date = #{dictCreatedDate,jdbcType=TIMESTAMP},
+      dict_updated_date = #{dictUpdatedDate,jdbcType=TIMESTAMP},
+      dict_sort = #{dictSort,jdbcType=INTEGER},
+      dict_remark = #{dictRemark,jdbcType=LONGVARCHAR}
+    where dict_id = #{dictId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zhihuisystem.pds.model.Dicts">
+    <!--
+    @mbg.generated
+    -->
+    update t_dicts
+    set dict_no = #{dictNo,jdbcType=INTEGER},
+      dict_no_name = #{dictNoName,jdbcType=VARCHAR},
+      dict_key = #{dictKey,jdbcType=VARCHAR},
+      dict_key_name = #{dictKeyName,jdbcType=VARCHAR},
+      dict_created_date = #{dictCreatedDate,jdbcType=TIMESTAMP},
+      dict_updated_date = #{dictUpdatedDate,jdbcType=TIMESTAMP},
+      dict_sort = #{dictSort,jdbcType=INTEGER}
+    where dict_id = #{dictId,jdbcType=INTEGER}
+  </update>
+</mapper>

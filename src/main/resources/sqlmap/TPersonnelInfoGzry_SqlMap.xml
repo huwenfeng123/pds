@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhihuisystem.pds.mapper.PersonnelInfoGzryMapper">
+  <resultMap id="BaseResultMap" type="com.zhihuisystem.pds.model.PersonnelInfoGzry">
+    <!--
+    @mbg.generated
+    -->
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="duty_id" jdbcType="INTEGER" property="dutyId" />
+    <result column="gw_id" jdbcType="INTEGER" property="gwId" />
+    <result column="siren" jdbcType="VARCHAR" property="siren" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="sex_id" jdbcType="INTEGER" property="sexId" />
+    <result column="birth" jdbcType="TIMESTAMP" property="birth" />
+    <result column="id_card" jdbcType="VARCHAR" property="idCard" />
+    <result column="political_status_id" jdbcType="INTEGER" property="politicalStatusId" />
+    <result column="cjggss" jdbcType="DATE" property="cjggss" />
+    <result column="cjgggzsj" jdbcType="DATE" property="cjgggzsj" />
+    <result column="cjjggzsj" jdbcType="DATE" property="cjjggzsj" />
+    <result column="native_place_id" jdbcType="INTEGER" property="nativePlaceId" />
+    <result column="folk_id" jdbcType="INTEGER" property="folkId" />
+    <result column="police_rank_id" jdbcType="INTEGER" property="policeRankId" />
+    <result column="work_status_id" jdbcType="INTEGER" property="workStatusId" />
+    <result column="out_date" jdbcType="DATE" property="outDate" />
+    <result column="education_level_id" jdbcType="INTEGER" property="educationLevelId" />
+    <result column="professional_title_id" jdbcType="INTEGER" property="professionalTitleId" />
+    <result column="xzzxz" jdbcType="VARCHAR" property="xzzxz" />
+    <result column="xzz" jdbcType="VARCHAR" property="xzz" />
+    <result column="hjdxz" jdbcType="VARCHAR" property="hjdxz" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="iamges_url" jdbcType="VARCHAR" property="iamgesUrl" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+    @mbg.generated
+    -->
+    id, name, duty_id, gw_id, siren, phone, sex_id, birth, id_card, political_status_id, 
+    cjggss, cjgggzsj, cjjggzsj, native_place_id, folk_id, police_rank_id, work_status_id, 
+    out_date, education_level_id, professional_title_id, xzzxz, xzz, hjdxz, create_time, 
+    update_time, iamges_url
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    <!--
+    @mbg.generated
+    -->
+    select 
+    <include refid="Base_Column_List" />
+    from t_personnel_info_gzry
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    <!--
+    @mbg.generated
+    -->
+    delete from t_personnel_info_gzry
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.zhihuisystem.pds.model.PersonnelInfoGzry">
+    <!--
+    @mbg.generated
+    -->
+    insert into t_personnel_info_gzry (id, name, duty_id, 
+      gw_id, siren, phone, 
+      sex_id, birth, id_card, 
+      political_status_id, cjggss, cjgggzsj, 
+      cjjggzsj, native_place_id, folk_id, 
+      police_rank_id, work_status_id, out_date, 
+      education_level_id, professional_title_id, 
+      xzzxz, xzz, hjdxz, 
+      create_time, update_time, iamges_url
+      )
+    values (#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{dutyId,jdbcType=INTEGER}, 
+      #{gwId,jdbcType=INTEGER}, #{siren,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, 
+      #{sexId,jdbcType=INTEGER}, #{birth,jdbcType=TIMESTAMP}, #{idCard,jdbcType=VARCHAR}, 
+      #{politicalStatusId,jdbcType=INTEGER}, #{cjggss,jdbcType=DATE}, #{cjgggzsj,jdbcType=DATE}, 
+      #{cjjggzsj,jdbcType=DATE}, #{nativePlaceId,jdbcType=INTEGER}, #{folkId,jdbcType=INTEGER}, 
+      #{policeRankId,jdbcType=INTEGER}, #{workStatusId,jdbcType=INTEGER}, #{outDate,jdbcType=DATE}, 
+      #{educationLevelId,jdbcType=INTEGER}, #{professionalTitleId,jdbcType=INTEGER}, 
+      #{xzzxz,jdbcType=VARCHAR}, #{xzz,jdbcType=VARCHAR}, #{hjdxz,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, #{iamgesUrl,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.zhihuisystem.pds.model.PersonnelInfoGzry">
+    <!--
+    @mbg.generated
+    -->
+    insert into t_personnel_info_gzry
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="dutyId != null">
+        duty_id,
+      </if>
+      <if test="gwId != null">
+        gw_id,
+      </if>
+      <if test="siren != null">
+        siren,
+      </if>
+      <if test="phone != null">
+        phone,
+      </if>
+      <if test="sexId != null">
+        sex_id,
+      </if>
+      <if test="birth != null">
+        birth,
+      </if>
+      <if test="idCard != null">
+        id_card,
+      </if>
+      <if test="politicalStatusId != null">
+        political_status_id,
+      </if>
+      <if test="cjggss != null">
+        cjggss,
+      </if>
+      <if test="cjgggzsj != null">
+        cjgggzsj,
+      </if>
+      <if test="cjjggzsj != null">
+        cjjggzsj,
+      </if>
+      <if test="nativePlaceId != null">
+        native_place_id,
+      </if>
+      <if test="folkId != null">
+        folk_id,
+      </if>
+      <if test="policeRankId != null">
+        police_rank_id,
+      </if>
+      <if test="workStatusId != null">
+        work_status_id,
+      </if>
+      <if test="outDate != null">
+        out_date,
+      </if>
+      <if test="educationLevelId != null">
+        education_level_id,
+      </if>
+      <if test="professionalTitleId != null">
+        professional_title_id,
+      </if>
+      <if test="xzzxz != null">
+        xzzxz,
+      </if>
+      <if test="xzz != null">
+        xzz,
+      </if>
+      <if test="hjdxz != null">
+        hjdxz,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="iamgesUrl != null">
+        iamges_url,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="dutyId != null">
+        #{dutyId,jdbcType=INTEGER},
+      </if>
+      <if test="gwId != null">
+        #{gwId,jdbcType=INTEGER},
+      </if>
+      <if test="siren != null">
+        #{siren,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="sexId != null">
+        #{sexId,jdbcType=INTEGER},
+      </if>
+      <if test="birth != null">
+        #{birth,jdbcType=TIMESTAMP},
+      </if>
+      <if test="idCard != null">
+        #{idCard,jdbcType=VARCHAR},
+      </if>
+      <if test="politicalStatusId != null">
+        #{politicalStatusId,jdbcType=INTEGER},
+      </if>
+      <if test="cjggss != null">
+        #{cjggss,jdbcType=DATE},
+      </if>
+      <if test="cjgggzsj != null">
+        #{cjgggzsj,jdbcType=DATE},
+      </if>
+      <if test="cjjggzsj != null">
+        #{cjjggzsj,jdbcType=DATE},
+      </if>
+      <if test="nativePlaceId != null">
+        #{nativePlaceId,jdbcType=INTEGER},
+      </if>
+      <if test="folkId != null">
+        #{folkId,jdbcType=INTEGER},
+      </if>
+      <if test="policeRankId != null">
+        #{policeRankId,jdbcType=INTEGER},
+      </if>
+      <if test="workStatusId != null">
+        #{workStatusId,jdbcType=INTEGER},
+      </if>
+      <if test="outDate != null">
+        #{outDate,jdbcType=DATE},
+      </if>
+      <if test="educationLevelId != null">
+        #{educationLevelId,jdbcType=INTEGER},
+      </if>
+      <if test="professionalTitleId != null">
+        #{professionalTitleId,jdbcType=INTEGER},
+      </if>
+      <if test="xzzxz != null">
+        #{xzzxz,jdbcType=VARCHAR},
+      </if>
+      <if test="xzz != null">
+        #{xzz,jdbcType=VARCHAR},
+      </if>
+      <if test="hjdxz != null">
+        #{hjdxz,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="iamgesUrl != null">
+        #{iamgesUrl,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhihuisystem.pds.model.PersonnelInfoGzry">
+    <!--
+    @mbg.generated
+    -->
+    update t_personnel_info_gzry
+    <set>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="dutyId != null">
+        duty_id = #{dutyId,jdbcType=INTEGER},
+      </if>
+      <if test="gwId != null">
+        gw_id = #{gwId,jdbcType=INTEGER},
+      </if>
+      <if test="siren != null">
+        siren = #{siren,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="sexId != null">
+        sex_id = #{sexId,jdbcType=INTEGER},
+      </if>
+      <if test="birth != null">
+        birth = #{birth,jdbcType=TIMESTAMP},
+      </if>
+      <if test="idCard != null">
+        id_card = #{idCard,jdbcType=VARCHAR},
+      </if>
+      <if test="politicalStatusId != null">
+        political_status_id = #{politicalStatusId,jdbcType=INTEGER},
+      </if>
+      <if test="cjggss != null">
+        cjggss = #{cjggss,jdbcType=DATE},
+      </if>
+      <if test="cjgggzsj != null">
+        cjgggzsj = #{cjgggzsj,jdbcType=DATE},
+      </if>
+      <if test="cjjggzsj != null">
+        cjjggzsj = #{cjjggzsj,jdbcType=DATE},
+      </if>
+      <if test="nativePlaceId != null">
+        native_place_id = #{nativePlaceId,jdbcType=INTEGER},
+      </if>
+      <if test="folkId != null">
+        folk_id = #{folkId,jdbcType=INTEGER},
+      </if>
+      <if test="policeRankId != null">
+        police_rank_id = #{policeRankId,jdbcType=INTEGER},
+      </if>
+      <if test="workStatusId != null">
+        work_status_id = #{workStatusId,jdbcType=INTEGER},
+      </if>
+      <if test="outDate != null">
+        out_date = #{outDate,jdbcType=DATE},
+      </if>
+      <if test="educationLevelId != null">
+        education_level_id = #{educationLevelId,jdbcType=INTEGER},
+      </if>
+      <if test="professionalTitleId != null">
+        professional_title_id = #{professionalTitleId,jdbcType=INTEGER},
+      </if>
+      <if test="xzzxz != null">
+        xzzxz = #{xzzxz,jdbcType=VARCHAR},
+      </if>
+      <if test="xzz != null">
+        xzz = #{xzz,jdbcType=VARCHAR},
+      </if>
+      <if test="hjdxz != null">
+        hjdxz = #{hjdxz,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="iamgesUrl != null">
+        iamges_url = #{iamgesUrl,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zhihuisystem.pds.model.PersonnelInfoGzry">
+    <!--
+    @mbg.generated
+    -->
+    update t_personnel_info_gzry
+    set name = #{name,jdbcType=VARCHAR},
+      duty_id = #{dutyId,jdbcType=INTEGER},
+      gw_id = #{gwId,jdbcType=INTEGER},
+      siren = #{siren,jdbcType=VARCHAR},
+      phone = #{phone,jdbcType=VARCHAR},
+      sex_id = #{sexId,jdbcType=INTEGER},
+      birth = #{birth,jdbcType=TIMESTAMP},
+      id_card = #{idCard,jdbcType=VARCHAR},
+      political_status_id = #{politicalStatusId,jdbcType=INTEGER},
+      cjggss = #{cjggss,jdbcType=DATE},
+      cjgggzsj = #{cjgggzsj,jdbcType=DATE},
+      cjjggzsj = #{cjjggzsj,jdbcType=DATE},
+      native_place_id = #{nativePlaceId,jdbcType=INTEGER},
+      folk_id = #{folkId,jdbcType=INTEGER},
+      police_rank_id = #{policeRankId,jdbcType=INTEGER},
+      work_status_id = #{workStatusId,jdbcType=INTEGER},
+      out_date = #{outDate,jdbcType=DATE},
+      education_level_id = #{educationLevelId,jdbcType=INTEGER},
+      professional_title_id = #{professionalTitleId,jdbcType=INTEGER},
+      xzzxz = #{xzzxz,jdbcType=VARCHAR},
+      xzz = #{xzz,jdbcType=VARCHAR},
+      hjdxz = #{hjdxz,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      iamges_url = #{iamgesUrl,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>
